@@ -17,6 +17,10 @@ public class CarRental {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Car saga = new Car( 5, 90, "None");
+        saga.showSpecs();
+        Car exora = new Car( 7, 120, "Airbags");
+        exora.showSpecs();
     }
     
 }
