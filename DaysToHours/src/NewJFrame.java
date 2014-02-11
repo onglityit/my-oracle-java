@@ -13,6 +13,7 @@ public class NewJFrame extends javax.swing.JFrame {
     /**
      * Creates new form NewJFrame
      */
+    
     public NewJFrame() {
         initComponents();
     }
@@ -36,6 +37,11 @@ public class NewJFrame extends javax.swing.JFrame {
 
         txtDays.setText("jTextField1");
         txtDays.setName(""); // NOI18N
+        txtDays.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtDaysKeyReleased(evt);
+            }
+        });
 
         txtHours.setText("jTextField2");
 
@@ -81,6 +87,15 @@ public class NewJFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtDaysKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDaysKeyReleased
+        // TODO add your handling code here:
+        //5.1 convert txtDays into int
+        int days = Integer.parseInt(txtDays.getText());
+        final int HOURS_PER_DAY = 24;
+        int hours = days * HOURS_PER_DAY;
+        txtHours.setText(hours +"");
+    }//GEN-LAST:event_txtDaysKeyReleased
 
     /**
      * @param args the command line arguments
